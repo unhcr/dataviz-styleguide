@@ -3,3 +3,8 @@
   font-family: 'Proxima Nova', 'Lato', Arial, sans-serif;
   font-size: 38pt;
 }
+
+.unhcr-logo-small {
+  width: 200px;
+  display: inline-block;
+}
