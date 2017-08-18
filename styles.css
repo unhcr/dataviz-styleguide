@@ -5,7 +5,7 @@
 }
 
 .unhcr-logo-small {
-  width: 200px;
+  height: 48px;
   display: inline-block;
 }
 
@@ -13,11 +13,11 @@
   display: inline-block;
   margin-left: 10px;
   font-family: 'Proxima Nova', 'Lato', Arial, sans-serif;
-  font-size: 38pt;
+  font-size: 36pt;
 }
 
 .unhcr-page-title strong {
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .unhcr-page-title span {
