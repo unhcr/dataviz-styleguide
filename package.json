@@ -1,0 +1,27 @@
+{
+  "name": "dataviz-styleguide",
+  "version": "0.0.1",
+  "description": "Branding guidelines for data visualisation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unhcr/dataviz-styleguide.git"
+  },
+  "keywords": [
+    "data",
+    "visualization",
+    "design"
+  ],
+  "author": "UNHCR",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/unhcr/dataviz-styleguide/issues"
+  },
+  "homepage": "https://github.com/unhcr/dataviz-styleguide#readme",
+  "dependencies": {
+    "semantic-ui": "^2.2.13"
+  }
+}
