@@ -12,6 +12,7 @@
 .unhcr-page-title {
   display: inline-block;
   margin-left: 16px;
+  margin-left: 16px;
   font-family: 'Proxima Nova', 'Lato', Arial, sans-serif;
   font-size: 36pt;
 }
@@ -23,4 +24,8 @@
 .unhcr-page-title span {
   margin-left: 5px;
   font-weight: 300;
+}
+
+.unhcr-page-header {
+  padding-bottom: 10px;
 }
