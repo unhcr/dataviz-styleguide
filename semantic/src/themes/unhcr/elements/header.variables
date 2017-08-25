@@ -19,7 +19,7 @@
 @firstMargin: -@lineHeightOffset;
 @lastMargin: 0em;
 @horizontalPadding: 0em;
-@verticalPadding: 0em;
+@verticalPadding: 5em;
 
 /* Sub Heading */
 @subHeadingDistance: @2px;
