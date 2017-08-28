@@ -2,3 +2,4 @@
          Theme Overrides
 *******************************/
 
+h4 { color: @primaryColor }
