@@ -8,7 +8,7 @@
 
 
 /* Label */
-@labelDistance: 1.85714em; /* 26px @ 14/em */
+@labelDistance: 1.5em;
 
 /* Checkbox */
 @checkboxBackground: @white;
@@ -49,7 +49,7 @@
 
 /* Focus */
 @checkboxFocusBackground: @white;
-@checkboxFocusBorderColor: @focusedFormMutedBorderColor;
+@checkboxFocusBorderColor: @selectedBorderColor;
 @checkboxFocusCheckColor: @selectedTextColor;
 @labelFocusColor: @selectedTextColor;
 
@@ -57,13 +57,13 @@
 @labelActiveColor: @selectedTextColor;
 @checkboxActiveBackground: @white;
 @checkboxActiveBorderColor: @selectedBorderColor;
-@checkboxActiveCheckColor: @selectedTextColor;
+@checkboxActiveCheckColor: @blue;
 @checkboxActiveCheckOpacity: 1;
 
 /* Active Focus */
 @checkboxActiveFocusBackground: @white;
 @checkboxActiveFocusBorderColor: @checkboxFocusBorderColor;
-@checkboxActiveFocusCheckColor: @selectedTextColor;
+@checkboxActiveFocusCheckColor: @blue;
 
 /* Indeterminate */
 @checkboxIndeterminateBackground: @checkboxActiveBackground;
@@ -89,7 +89,7 @@
 
 @bulletTop: 1px;
 @bulletLeft: 0px;
-@bulletScale: (7 / 15); /* 7px as unitless value from radio size */
+@bulletScale: (10 / 15); /* 7px as unitless value from radio size */
 @bulletColor: @textColor;
 @bulletRadius: @circularRadius;
 
