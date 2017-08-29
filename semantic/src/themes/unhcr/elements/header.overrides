@@ -7,8 +7,9 @@ h2 {
 }
 
 .unhcr-header-title {
-	float: right; 
-	text-align: right
+	text-align: left;
+	padding-bottom: 5px;
+	padding-top: 2px;
 }
 
 .unhcr-header {
@@ -20,7 +21,9 @@ h2 {
 .unhcr-header-logo {
   height: 60px;
   display: inline-block;
-  margin-top: 11px;
+  margin-top: 5px;
+  float: left; 
+  padding-right: 0px !important;
 }
 
 .unhcr-header-divider {
@@ -101,6 +104,5 @@ h2 {
 .unhcr-header-style3 .unhcr-header-title {
     float: left;
     text-align: left;
-    margin-left: 210px;
-    margin-top: 25px;
+    margin-top: 20px;
 }
