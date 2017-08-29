@@ -104,5 +104,5 @@ h2 {
 .unhcr-header-style3 .unhcr-header-title {
     float: left;
     text-align: left;
-    margin-top: 20px;
+    margin-top: 14px;
 }
