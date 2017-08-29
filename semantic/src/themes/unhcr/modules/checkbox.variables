@@ -63,7 +63,7 @@
 /* Active Focus */
 @checkboxActiveFocusBackground: @white;
 @checkboxActiveFocusBorderColor: @checkboxFocusBorderColor;
-@checkboxActiveFocusCheckColor: @selectedTextColor;
+@checkboxActiveFocusCheckColor: @blue;
 
 /* Indeterminate */
 @checkboxIndeterminateBackground: @checkboxActiveBackground;
@@ -89,7 +89,7 @@
 
 @bulletTop: 1px;
 @bulletLeft: 0px;
-@bulletScale: (7 / 15); /* 7px as unitless value from radio size */
+@bulletScale: (10 / 15); /* 7px as unitless value from radio size */
 @bulletColor: @textColor;
 @bulletRadius: @circularRadius;
 
