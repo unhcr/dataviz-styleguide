@@ -27670,7 +27670,7 @@ a.ui.card:hover,
   cursor: auto;
   position: relative;
   display: block;
-  padding-left: 1.85714em;
+  padding-left: 1.5em;
   outline: none;
   font-size: 1em;
 }
@@ -27777,7 +27777,7 @@ a.ui.card:hover,
 .ui.checkbox input:focus ~ .box:before,
 .ui.checkbox input:focus ~ label:before {
   background: #FFFFFF;
-  border-color: #96C8DA;
+  border-color: rgba(34, 36, 38, 0.35);
 }
 
 .ui.checkbox input:focus ~ .box:after,
@@ -27802,7 +27802,7 @@ a.ui.card:hover,
 .ui.checkbox input:checked ~ .box:after,
 .ui.checkbox input:checked ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: #0072BC;
 }
 
 /*--------------
@@ -27818,7 +27818,7 @@ a.ui.card:hover,
 .ui.checkbox input:not([type=radio]):indeterminate ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate ~ label:after {
   opacity: 1;
-  color: rgba(0, 0, 0, 0.95);
+  color: #0072BC;
 }
 
 /*--------------
@@ -27830,14 +27830,14 @@ a.ui.card:hover,
 .ui.checkbox input:checked:focus ~ .box:before,
 .ui.checkbox input:checked:focus ~ label:before {
   background: #FFFFFF;
-  border-color: #96C8DA;
+  border-color: rgba(34, 36, 38, 0.35);
 }
 
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ .box:after,
 .ui.checkbox input:not([type=radio]):indeterminate:focus ~ label:after,
 .ui.checkbox input:checked:focus ~ .box:after,
 .ui.checkbox input:checked:focus ~ label:after {
-  color: rgba(0, 0, 0, 0.95);
+  color: #0072BC;
 }
 
 /*--------------
@@ -27897,7 +27897,7 @@ a.ui.card:hover,
 
 .ui.radio.checkbox .box,
 .ui.radio.checkbox label {
-  padding-left: 1.85714em;
+  padding-left: 1.5em;
 }
 
 /* Box */
@@ -27934,8 +27934,8 @@ a.ui.card:hover,
   width: 15px;
   height: 15px;
   border-radius: 500rem;
-  -webkit-transform: scale(0.46666667);
-  transform: scale(0.46666667);
+  -webkit-transform: scale(0.66666667);
+  transform: scale(0.66666667);
   background-color: rgba(0, 0, 0, 0.87);
 }
 
@@ -27967,7 +27967,7 @@ a.ui.card:hover,
 
 .ui.radio.checkbox input:checked ~ .box:after,
 .ui.radio.checkbox input:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #0072BC;
 }
 
 /* Active Focus */
@@ -27979,7 +27979,7 @@ a.ui.card:hover,
 
 .ui.radio.checkbox input:focus:checked ~ .box:after,
 .ui.radio.checkbox input:focus:checked ~ label:after {
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #0072BC;
 }
 
 /*--------------
