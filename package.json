@@ -1,10 +1,10 @@
 {
   "name": "dataviz-styleguide",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Branding guidelines for data visualisation.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "cd semantic; gulp build-css"
   },
   "repository": {
     "type": "git",
