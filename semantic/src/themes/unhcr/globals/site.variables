@@ -500,8 +500,8 @@
 @headerLineHeightOffset : (@headerLineHeight - 1em) / 2;
 
 /* Header Spacing */
-@headerTopMargin    : ~"calc(2rem - "@headerLineHeightOffset~")";
-@headerBottomMargin : 1rem;
+@headerTopMargin    : ~"calc(1rem - "@headerLineHeightOffset~")";
+@headerBottomMargin : 0.5rem;
 @headerMargin       : @headerTopMargin 0em @headerBottomMargin;
 
 /* Minimum Mobile Width */
