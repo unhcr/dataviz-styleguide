@@ -7485,6 +7485,12 @@ h2 {
   position: relative;
 }
 
+.unhcr-header-logo {
+  height: 60px;
+  display: inline-block;
+  margin-top: 11px;
+}
+
 .unhcr-header-divider {
   border-bottom: 2px solid grey;
   width: 100%;
@@ -7542,9 +7548,28 @@ h2 {
   margin-top: 3px;
 }
 
-.unhcr-header-style2 h1 {
+.unhcr-header-style2 h1,
+.unhcr-header-style3 h1 {
   color: #000;
   text-transform: uppercase;
+}
+
+.unhcr-header-style3 .unhcr-header-title h1,
+.unhcr-header-style3 .unhcr-header-title h2 {
+  display: inline;
+}
+
+.unhcr-header-style3 .unhcr-header-title h2 {
+  margin-left: 5px;
+  text-transform: uppercase;
+  font-size: 2em;
+}
+
+.unhcr-header-style3 .unhcr-header-title {
+  float: left;
+  text-align: left;
+  margin-left: 210px;
+  margin-top: 25px;
 }
 
 /*******************************
