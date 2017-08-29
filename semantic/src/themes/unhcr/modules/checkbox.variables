@@ -8,7 +8,7 @@
 
 
 /* Label */
-@labelDistance: 1.85714em; /* 26px @ 14/em */
+@labelDistance: 1.5em;
 
 /* Checkbox */
 @checkboxBackground: @white;
