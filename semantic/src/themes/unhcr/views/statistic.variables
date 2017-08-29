@@ -7,7 +7,7 @@
 --------------------*/
 
 @margin: 1em 0em;
-@textAlign: center;
+@textAlign: left;
 @maxWidth: auto;
 
 /* Group */
