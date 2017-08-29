@@ -57,7 +57,7 @@
 @labelActiveColor: @selectedTextColor;
 @checkboxActiveBackground: @white;
 @checkboxActiveBorderColor: @selectedBorderColor;
-@checkboxActiveCheckColor: @selectedTextColor;
+@checkboxActiveCheckColor: @blue;
 @checkboxActiveCheckOpacity: 1;
 
 /* Active Focus */
