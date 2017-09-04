@@ -31,14 +31,14 @@
 @valueTextTransform: uppercase;
 
 /* Label */
-@labelSize: @relativeMedium;
+@labelSize: @large;
 @topLabelDistance: 0rem;
 @bottomLabelDistance: 0rem;
 @labelFont: @headerFont;
 @labelFontWeight: bold;
-@labelColor: @textColor;
+@labelColor: @blue;
 @labelLineHeight: @relativeLarge;
-@labelTextTransform: uppercase;
+@labelTextTransform: inherit;
 
 /* Text */
 @textValueLineHeight: 1em;
