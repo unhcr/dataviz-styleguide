@@ -6,6 +6,11 @@ h2 {
 	font-weight: 300;
 }
 
+.ui.header,
+h4 {
+	color: #000;
+}
+
 .unhcr-header-title {
 	text-align: left;
 	padding-bottom: 5px;
