@@ -1,3 +1,14 @@
 /*******************************
         Global Overrides
 *******************************/
+
+/* Add colored text functionality, which is missing from Semantic UI.
+   See https://github.com/Semantic-Org/Semantic-UI/issues/1885#issuecomment-226047499 */
+@text-colors: blue, green, orange, pink, purple, red, teal, yellow, black, grey, white;
+.text {
+    .-(@i: length(@text-colors)) when (@i > 0) {
+        @c: extract(@text-colors, @i);
+        &.@{c} { color: @@c }
+        .-((@i - 1));
+    }.-;
+}
