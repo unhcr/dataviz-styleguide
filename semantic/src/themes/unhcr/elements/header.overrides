@@ -24,7 +24,7 @@ h4 {
 }
 
 .unhcr-header-logo {
-  height: 60px;
+  height: 55px;
   display: inline-block;
   margin-top: 5px;
   float: left; 
@@ -35,6 +35,17 @@ h4 {
 	border-bottom: 2px solid grey;
 	width: 100%;
     margin-bottom: 19px;
+}
+
+.unhcr-header-social {
+    float: right;
+    right: 0px;
+    position: absolute;
+    top: 3px;
+}
+
+.unhcr-header-social i.icon {
+	font-size: 25px;
 }
 
 .unhcr-header-divider:after,
@@ -109,5 +120,5 @@ h4 {
 .unhcr-header-style3 .unhcr-header-title {
     float: left;
     text-align: left;
-    margin-top: 14px;
+    margin-top: 9px;
 }
