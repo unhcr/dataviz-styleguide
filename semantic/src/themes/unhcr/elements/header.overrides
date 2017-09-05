@@ -41,7 +41,7 @@ h4 {
     float: right;
     right: 0px;
     position: absolute;
-    top: 3px;
+    top: 10px;
 }
 
 .unhcr-header-social i.icon {
