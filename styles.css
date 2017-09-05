@@ -1,1 +1,7 @@
 /* CUSTOM PAGE CSS - USED FOR CSS SPECIFIC TO THE STYLEGUIDE DOCUMENTATION PAGES */
+
+code { 
+    border-radius: 19px;
+    padding: 12px 15px !important;
+    border: 2px solid #baf4ff;
+}
