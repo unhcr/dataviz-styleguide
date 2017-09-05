@@ -11,12 +11,22 @@
     -->
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
+    <!-- Load jQuery. --> 
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+
+    <!-- Load code highlighter JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
     <!-- Load the Semantic UI JavaScript library. -->
     <script src="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.js"></script>
 
     <!-- Load CSS from UNPKG CDN for GitHub Pages deployment -->
     <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css">
     <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/styles.css">
+
+    <!-- Load code highlighter CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-dark.min.css">
 
     <!--
       Load CSS locally for use during development.
@@ -153,7 +163,7 @@
             </div>
           </div>
 
-          <code>CODE SNIPPET</code><br/><br/>
+          <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
           <h3 class="ui header">Header style 2</h3>
           Guidance notes and reccomendations when to use this header style. <br/><br/>
@@ -174,7 +184,7 @@
             </div>
           </div>
 
-        <code>CODE SNIPPET</code><br/><br/>
+        <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
           <h3 class="ui header">Header style 3</h3>
           Guidance notes and reccomendations when to use this header style. <br/><br/>
@@ -185,7 +195,7 @@
               <div class="unhcr-header-title">
                 <h1>Somalia</h1>
                 <h2>Internal displacement</h2>  
-                <h3>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</h3>                     
+                <h3>Displacements Monitored by UNHCR Protection and Return Monitoring Network (PRMN)</h3>
               </div>
               <div class="unhcr-header-social">
                 <a href="#" target="_blank" title="Share on Facebook"><i class="facebook square icon"></i></a>
@@ -194,7 +204,7 @@
             </div>
           </div>
 
-        <code>CODE SNIPPET</code><br/><br/>
+        <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
         </div><!-- / headers -->
 
@@ -231,4 +241,24 @@
 
 <br/><br/><br/>
 
+
+<script>
+$(document).ready(function() {
+  $('.code').each(function(){
+    var html = $(this).html();
+    $(this).next('pre').find('code').text(html);
+  });
+
+  hljs.configure({
+    tabReplace: '', // 4 spaces
+  });
+
+  $('pre code').each(function(i, block) {
+    var html = $(this).html();
+    var pattern = html.match(/\s*\n[\t\s]*/);
+    $(this).html($.trim(html.replace(new RegExp(pattern, "g"),'\n')));
+    hljs.highlightBlock(block);
+  });
+});
+</script>
 </html>
