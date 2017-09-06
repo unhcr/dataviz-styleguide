@@ -338,7 +338,6 @@
         var html = unindent($(this).html()).trim();
         var link = $('<a href="#">Show code snippet</a>');
         $(this).after(link); // Append the link after each .code element.
-        $(this).closest('div').prev('h3').hide();
         link.click(function(e){
           e.preventDefault();
           hljs.highlightBlock($('.ui.modal pre code').text(html)[0]);
