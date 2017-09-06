@@ -42,13 +42,11 @@
   <body>
     <div class="ui container">
       <br/>
-      <div class="code">
-        <div class="ui grid unhcr-header unhcr-header-style3">
-          <img class="unhcr-header-logo" src="images/unhcr-logo-horizontal.svg">
-          <div class="unhcr-header-title">
-            <h1>Dataviz</h1>
-            <h2>Styleguide</h2>
-          </div>
+      <div class="ui grid unhcr-header unhcr-header-style3">
+        <img class="unhcr-header-logo" src="images/unhcr-logo-horizontal.svg">
+        <div class="unhcr-header-title">
+          <h1>Dataviz</h1>
+          <h2>Styleguide</h2>
         </div>
       </div>
 
@@ -146,7 +144,6 @@
           <h1 class="ui header">Page Headers</h1>
 
           <h3 class="ui header">Header style 1</h3>
-          <i class="icon code"></i>
 
           Guidance notes and reccomendations when to use this header style. <br/><br/>
           
@@ -185,7 +182,6 @@
             </div>
           </div>
 
-        <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
           <h3 class="ui header">Header style 3</h3>
           Guidance notes and reccomendations when to use this header style. <br/><br/>
@@ -205,7 +201,6 @@
             </div>
           </div>
 
-        <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
         </div><!-- / headers -->
 
@@ -245,51 +240,33 @@
         Code Snippet
       </div>
       <div class="content">
-        <pre></pre>
+        <pre><code></code></pre>
       </div>
       <div class="actions">
-        <div class="ui black deny button">
-          Nope
-        </div>
         <div class="ui positive right labeled icon button">
-          Yep, that's me
+          Got it!
           <i class="checkmark icon"></i>
         </div>
       </div>
     </div>
+
     <script>
 
       // Removes indentation from code snippet string.
       // Draws from https://stackoverflow.com/questions/31753617
       function unindent(str) {
-        var regex = new RegExp(str.match(/\s*\n[\t\s]*/), 'g');
-        return str.replace(regex,'\n')
+        return str.replace(new RegExp(str.match(/\s*\n[\t\s]*/), 'g'), '\n')
       }
 
-      $(document).ready(function() {
-
-        hljs.configure({
-          tabReplace: '', // 4 spaces
+      $('.code').each(function(){
+        var html = unindent($(this).html()).trim();
+        var link = $('<a href="#">Show code snippet</a>');
+        $(this).after(link); // Append the link after each .code element.
+        link.click(function(e){
+          e.preventDefault();
+          hljs.highlightBlock($('.ui.modal pre code').text(html)[0]);
+          $('.ui.modal').modal('show');
         });
-
-        $('.code').each(function(){
-          var html = unindent($(this).html());
-          var link = $('<a href="#">Show code snippet</a>');
-          $(this).after(link);
-          link.click(function(e){
-            e.preventDefault();
-            $('.ui.modal pre').text(html);
-
-//            $('pre code').each(function(i, block) {
-//              var html = $(this).html();
-//              $(this).html($.trim());
-//              hljs.highlightBlock(block);
-//            });
-
-            $('.ui.modal').modal('show');
-          });
-        });
-
       });
     </script>
   </body>
