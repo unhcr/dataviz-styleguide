@@ -19,7 +19,8 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
 
     <!-- Load the Semantic UI JavaScript library. -->
-    <script src="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.js"></script>
+    <!-- <script src="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.js"></script> -->
+    <script src="semantic/dist/semantic.min.js"></script>
 
     <!-- Load CSS from UNPKG CDN for GitHub Pages deployment -->
     <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css">
@@ -41,13 +42,11 @@
   <body>
     <div class="ui container">
       <br/>
-      <div class="code">
-        <div class="ui grid unhcr-header unhcr-header-style3">
-          <img class="unhcr-header-logo" src="images/unhcr-logo-horizontal.svg">
-          <div class="unhcr-header-title">
-            <h1>Dataviz</h1>
-            <h2>Styleguide</h2>
-          </div>
+      <div class="ui grid unhcr-header unhcr-header-style3">
+        <img class="unhcr-header-logo" src="images/unhcr-logo-horizontal.svg">
+        <div class="unhcr-header-title">
+          <h1>Dataviz</h1>
+          <h2>Styleguide</h2>
         </div>
       </div>
 
@@ -145,6 +144,7 @@
           <h1 class="ui header">Page Headers</h1>
 
           <h3 class="ui header">Header style 1</h3>
+
           Guidance notes and reccomendations when to use this header style. <br/><br/>
           
           <div class="code">
@@ -162,8 +162,6 @@
               <div class="unhcr-header-divider"></div>
             </div>
           </div>
-
-          <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
           <h3 class="ui header">Header style 2</h3>
           Guidance notes and reccomendations when to use this header style. <br/><br/>
@@ -184,7 +182,6 @@
             </div>
           </div>
 
-        <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
           <h3 class="ui header">Header style 3</h3>
           Guidance notes and reccomendations when to use this header style. <br/><br/>
@@ -204,7 +201,6 @@
             </div>
           </div>
 
-        <pre><code class="html">CODE SNIPPET</code></pre><br/><br/>
 
         </div><!-- / headers -->
 
@@ -234,31 +230,44 @@
         </div>
 
 
-  <br/><br/><br/><br/>
+        <br/><br/><br/><br/>
       </div>
     </div>
+
+    <div class="ui modal">
+      <i class="close icon"></i>
+      <div class="header">
+        Code Snippet
+      </div>
+      <div class="content">
+        <pre><code></code></pre>
+      </div>
+      <div class="actions">
+        <div class="ui positive right labeled icon button">
+          Got it!
+          <i class="checkmark icon"></i>
+        </div>
+      </div>
+    </div>
+
+    <script>
+
+      // Removes indentation from code snippet string.
+      // Draws from https://stackoverflow.com/questions/31753617
+      function unindent(str) {
+        return str.replace(new RegExp(str.match(/\s*\n[\t\s]*/), 'g'), '\n')
+      }
+
+      $('.code').each(function(){
+        var html = unindent($(this).html()).trim();
+        var link = $('<a href="#">Show code snippet</a>');
+        $(this).after(link); // Append the link after each .code element.
+        link.click(function(e){
+          e.preventDefault();
+          hljs.highlightBlock($('.ui.modal pre code').text(html)[0]);
+          $('.ui.modal').modal('show');
+        });
+      });
+    </script>
   </body>
-
-<br/><br/><br/>
-
-
-<script>
-$(document).ready(function() {
-  $('.code').each(function(){
-    var html = $(this).html();
-    $(this).next('pre').find('code').text(html);
-  });
-
-  hljs.configure({
-    tabReplace: '', // 4 spaces
-  });
-
-  $('pre code').each(function(i, block) {
-    var html = $(this).html();
-    var pattern = html.match(/\s*\n[\t\s]*/);
-    $(this).html($.trim(html.replace(new RegExp(pattern, "g"),'\n')));
-    hljs.highlightBlock(block);
-  });
-});
-</script>
 </html>
