@@ -242,17 +242,10 @@
     <div class="ui modal">
       <i class="close icon"></i>
       <div class="header">
-        Profile Picture
+        Code Snippet
       </div>
-      <div class="image content">
-        <div class="ui medium image">
-          <img src="/images/avatar/large/chris.jpg">
-        </div>
-        <div class="description">
-          <div class="ui header">We've auto-chosen a profile image for you.</div>
-          <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-          <p>Is it okay to use this photo?</p>
-        </div>
+      <div class="content">
+        <pre></pre>
       </div>
       <div class="actions">
         <div class="ui black deny button">
@@ -265,28 +258,38 @@
       </div>
     </div>
     <script>
-      $(document).ready(function() {
 
-        $('.code').each(function(){
-          var html = $(this).html();
-          var link = $('<a href="#">Show code snippet</a>');
-          $(this).after(link);
-          link.click(function(e){
-            e.preventDefault();
-            $('.ui.modal').modal('show');
-          });
-        });
+      // Removes indentation from code snippet string.
+      // Draws from https://stackoverflow.com/questions/31753617
+      function unindent(str) {
+        var regex = new RegExp(str.match(/\s*\n[\t\s]*/), 'g');
+        return str.replace(regex,'\n')
+      }
+
+      $(document).ready(function() {
 
         hljs.configure({
           tabReplace: '', // 4 spaces
         });
 
-        $('pre code').each(function(i, block) {
-          var html = $(this).html();
-          var pattern = html.match(/\s*\n[\t\s]*/);
-          $(this).html($.trim(html.replace(new RegExp(pattern, "g"),'\n')));
-          hljs.highlightBlock(block);
+        $('.code').each(function(){
+          var html = unindent($(this).html());
+          var link = $('<a href="#">Show code snippet</a>');
+          $(this).after(link);
+          link.click(function(e){
+            e.preventDefault();
+            $('.ui.modal pre').text(html);
+
+//            $('pre code').each(function(i, block) {
+//              var html = $(this).html();
+//              $(this).html($.trim());
+//              hljs.highlightBlock(block);
+//            });
+
+            $('.ui.modal').modal('show');
+          });
         });
+
       });
     </script>
   </body>
