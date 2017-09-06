@@ -4,7 +4,7 @@
   "description": "Branding guidelines for data visualisation.",
   "main": "index.js",
   "scripts": {
-    "prepublish": "cd semantic; gulp build-css"
+    "prepublish": "cd semantic; gulp build"
   },
   "repository": {
     "type": "git",
