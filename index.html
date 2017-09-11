@@ -14,6 +14,8 @@
     <!-- Load jQuery. --> 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+    <!-- Load D3.js. -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <!-- Load code highlighter JS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -105,7 +107,7 @@
           </p>
         </div>
         <div class="ten wide column">
-          <img class="ui image" src="images/RF277083_IMG_0059.jpg">
+          <div id="basic-colours"></div>
         </div>
 
 
@@ -413,6 +415,7 @@
         return str.replace(new RegExp(str.match(/\s*\n[\t\s]*/), 'g'), '\n')
       }
 
+      // Set up the code snippet links so a modal dialog pops up.
       $('.code').each(function(){
         var html = unindent($(this).html()).trim();
         var link = $('<a href="#">Show code snippet</a>');
@@ -423,6 +426,63 @@
           $('.ui.modal').modal('show');
         });
       });
+
+      // Set up the color boxes.
+      // 100 means lightest, 600 means darkest.
+      // Capitalization means it's the main colour of that hue.
+      var colours = {
+        blue100: '#CCE3F2',
+        blue200: '#99C7E4',
+        blue300: '#66AAD7',
+        blue400: '#338EC9',
+        Blue500: '#0072BC',
+        blue600: '#00568D',
+        red100: '#FCDBDF',
+        red200: '#F9B7BF',
+        red300: '#F592A0',
+        red400: '#F26E80',
+        Red500: '#EF4A60',
+        red600: '#B33848',
+        Green500: '#00B398',
+        Yellow500: '#F5C300',
+        white: '#FFFFFF',
+        gray300: '#ECECEC',
+        gray: '#AFAFAF',
+        black: '#000000',
+        bluegray300: '#E2E7EB',
+        bluegray400: '#93A3AB',
+        bluegray500: '#72879D'
+      };
+
+      var mainColours = [
+        colours.Blue500,
+        colours.Red500,
+        colours.Green500,
+        colours.Yellow500
+      ];
+
+      var blues = [
+        colours.blue100,
+        colours.blue200,
+        colours.blue300,
+        colours.blue400,
+        colours.Blue500,
+        colours.blue600
+      ];
+
+      var colourBoxWidth = 100;
+      var colourBoxHeight = 100;
+      var coloursContainer = d3.select('#basic-colours');
+      var coloursSVG = coloursContainer.append('svg')
+          .attr('width', colourBoxWidth * mainColours.length)
+          .attr('height', colourBoxHeight);
+      coloursSVG.selectAll('rect').data(mainColours)
+        .enter().append('rect')
+          .attr('width', colourBoxWidth)
+          .attr('height', colourBoxHeight)
+          .attr('x', function (d, i) { return i * colourBoxWidth })
+          .attr('fill', function (d) { return d; });
+
     </script>
   </body>
 </html>
