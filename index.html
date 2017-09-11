@@ -454,6 +454,13 @@
         bluegray500: '#72879D'
       };
 
+      var basicColours = [
+        colours.Blue500,
+        colours.black,
+        colours.white,
+        colours.Yellow500
+      ];
+
       var mainColours = [
         colours.Blue500,
         colours.Red500,
@@ -470,18 +477,23 @@
         colours.blue600
       ];
 
-      var colourBoxWidth = 100;
-      var colourBoxHeight = 100;
-      var coloursContainer = d3.select('#basic-colours');
-      var coloursSVG = coloursContainer.append('svg')
-          .attr('width', colourBoxWidth * mainColours.length)
-          .attr('height', colourBoxHeight);
-      coloursSVG.selectAll('rect').data(mainColours)
-        .enter().append('rect')
-          .attr('width', colourBoxWidth)
-          .attr('height', colourBoxHeight)
-          .attr('x', function (d, i) { return i * colourBoxWidth })
-          .attr('fill', function (d) { return d; });
+      function renderColours(id, colours){
+        var colourBoxWidth = 100;
+        var colourBoxHeight = 100;
+        var coloursContainer = d3.select('#' + id);
+        var coloursSVG = coloursContainer.append('svg')
+            .attr('width', colourBoxWidth * colours.length)
+            .attr('height', colourBoxHeight);
+        coloursSVG.selectAll('rect').data(colours)
+          .enter().append('rect')
+            .attr('width', colourBoxWidth)
+            .attr('height', colourBoxHeight)
+            .attr('x', function (d, i) { return i * colourBoxWidth })
+            .attr('fill', function (d) { return d; });
+      }
+
+      renderColours('basic-colours', basicColours);
+      //renderColours('main-colours', mainColours);
 
     </script>
   </body>
