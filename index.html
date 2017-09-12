@@ -14,6 +14,8 @@
     <!-- Load jQuery. --> 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
+    <!-- Load D3.js. -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
 
     <!-- Load code highlighter JS -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
@@ -105,7 +107,7 @@
           </p>
         </div>
         <div class="ten wide column">
-          <img class="ui image" src="images/RF277083_IMG_0059.jpg">
+          <div id="basic-colours"></div>
         </div>
 
 
@@ -441,6 +443,7 @@
         return str.replace(new RegExp(str.match(/\s*\n[\t\s]*/), 'g'), '\n')
       }
 
+      // Set up the code snippet links so a modal dialog pops up.
       $('.code').each(function(){
         var html = unindent($(this).html()).trim();
         var link = $('<a href="#">Show code snippet</a>');
@@ -451,6 +454,105 @@
           $('.ui.modal').modal('show');
         });
       });
+
+      // Set up the color boxes.
+      // 100 means lightest, 600 means darkest.
+      // Capitalization means it's the main colour of that hue.
+      var colours = {
+        blue100: '#CCE3F2',
+        blue200: '#99C7E4',
+        blue300: '#66AAD7',
+        blue400: '#338EC9',
+        Blue500: '#0072BC',
+        blue600: '#00568D',
+        red100: '#FCDBDF',
+        red200: '#F9B7BF',
+        red300: '#F592A0',
+        red400: '#F26E80',
+        Red500: '#EF4A60',
+        red600: '#B33848',
+        Green500: '#00B398',
+        Yellow500: '#F5C300',
+        white: '#FFFFFF',
+        gray300: '#ECECEC',
+        gray: '#AFAFAF',
+        black: '#000000',
+        bluegray300: '#E2E7EB',
+        bluegray400: '#93A3AB',
+        bluegray500: '#72879D'
+      };
+
+      var basicColours = [
+        colours.Blue500,
+        colours.black,
+        colours.white,
+        colours.Yellow500
+      ];
+
+      var mainColours = [
+        colours.Blue500,
+        colours.Red500,
+        colours.Green500,
+        colours.Yellow500
+      ];
+
+      var blues = [
+        colours.blue100,
+        colours.blue200,
+        colours.blue300,
+        colours.blue400,
+        colours.Blue500,
+        colours.blue600
+      ];
+
+      // Determines whether to use black or white text
+      // for text on top of the given color. Draws from
+      // https://bl.ocks.org/enjalot/f3aa070fd1d937f49ed1560c05220214
+      function blackOrWhite(colour){
+        var rgb = d3.rgb(colour);
+        var L = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
+        if(L >= 0.5 * 255) {
+          return "black";
+        } else {
+          return "white";
+        }
+      }
+
+      function renderColours(id, colours){
+
+        var container = document.getElementById(id);
+        var width = container.clientWidth;
+
+        var boxWidth = width / colours.length;
+        var boxHeight = boxWidth;
+
+        var svg = d3.select(container).append('svg')
+            .attr('width', boxWidth * colours.length)
+            .attr('height', boxHeight);
+
+        var groups = svg.selectAll('g').data(colours);
+        var groupsEnter = groups.enter().append('g')
+            .attr('transform', function (d, i) {
+              return 'translate(' + (i * boxWidth) + ')';
+            });
+
+        groupsEnter.append('rect')
+            .attr('width', boxWidth)
+            .attr('height', boxHeight)
+            .attr('fill', function (d) { return d; });
+
+        groupsEnter.append('text')
+            .attr('y', boxHeight / 2)
+            .attr('x', boxWidth / 2)
+            .attr('fill', blackOrWhite)
+            .style('text-anchor', 'middle')
+            .style('alignment-baseline', 'middle')
+            .text(function (d) { return d; });
+      }
+
+      renderColours('basic-colours', basicColours);
+      //renderColours('main-colours', mainColours);
+
     </script>
   </body>
 </html>
