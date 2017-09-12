@@ -481,6 +481,7 @@
       // for text on top of the given color. Draws from
       // https://bl.ocks.org/enjalot/f3aa070fd1d937f49ed1560c05220214
       function blackOrWhite(colour){
+        var rgb = d3.rgb(colour);
         var L = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
         if(L >= 0.5 * 255) {
           return "black";
@@ -501,7 +502,7 @@
             .attr('width', boxWidth * colours.length)
             .attr('height', boxHeight);
 
-        var groups =svg.selectAll('g').data(colours);
+        var groups = svg.selectAll('g').data(colours);
         var groupsEnter = groups.enter().append('g')
             .attr('transform', function (d, i) {
               return 'translate(' + (i * boxWidth) + ')';
@@ -511,6 +512,14 @@
             .attr('width', boxWidth)
             .attr('height', boxHeight)
             .attr('fill', function (d) { return d; });
+
+        groupsEnter.append('text')
+            .attr('y', boxHeight / 2)
+            .attr('x', boxWidth / 2)
+            .attr('fill', blackOrWhite)
+            .style('text-anchor', 'middle')
+            .style('alignment-baseline', 'middle')
+            .text(function (d) { return d; });
       }
 
       renderColours('basic-colours', basicColours);
