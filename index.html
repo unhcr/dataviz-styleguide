@@ -477,18 +477,39 @@
         colours.blue600
       ];
 
+      // Determines whether to use black or white text
+      // for text on top of the given color. Draws from
+      // https://bl.ocks.org/enjalot/f3aa070fd1d937f49ed1560c05220214
+      function blackOrWhite(colour){
+        var L = 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b;
+        if(L >= 0.5 * 255) {
+          return "black";
+        } else {
+          return "white";
+        }
+      }
+
       function renderColours(id, colours){
-        var colourBoxWidth = 100;
-        var colourBoxHeight = 100;
-        var coloursContainer = d3.select('#' + id);
-        var coloursSVG = coloursContainer.append('svg')
-            .attr('width', colourBoxWidth * colours.length)
-            .attr('height', colourBoxHeight);
-        coloursSVG.selectAll('rect').data(colours)
-          .enter().append('rect')
-            .attr('width', colourBoxWidth)
-            .attr('height', colourBoxHeight)
-            .attr('x', function (d, i) { return i * colourBoxWidth })
+
+        var container = document.getElementById(id);
+        var width = container.clientWidth;
+
+        var boxWidth = width / colours.length;
+        var boxHeight = boxWidth;
+
+        var svg = d3.select(container).append('svg')
+            .attr('width', boxWidth * colours.length)
+            .attr('height', boxHeight);
+
+        var groups =svg.selectAll('g').data(colours);
+        var groupsEnter = groups.enter().append('g')
+            .attr('transform', function (d, i) {
+              return 'translate(' + (i * boxWidth) + ')';
+            });
+
+        groupsEnter.append('rect')
+            .attr('width', boxWidth)
+            .attr('height', boxHeight)
             .attr('fill', function (d) { return d; });
       }
 
