@@ -49,3 +49,5 @@ Each user interface element has its own variables that can be tweaked. For examp
 Each element also has an "overrides" file, in which you can add your own CSS rules related to that element. Here's an [example pull request that overrides the color of header and h1 elements](https://github.com/unhcr/dataviz-styleguide/pull/65/files#diff-9e65d7a27b59b21f3bdaf6a590bfaba6R9).
 
 Variables that apply to the entire theme, rather than a specific element, can be found in `semantic/src/themes/unhcr/globals/site.variables`. Here's an [example pull request that modifies the global border radius](https://github.com/unhcr/dataviz-styleguide/pull/53/files).
+
+If you want to see how the variables are being translated into CSS, have a look at the "definitions", for example `semantic/src/definitions/elements/button.less`. Typically we will not need to modify these definition files, only variables, but it's useful to reference these to see how variables are being used.
