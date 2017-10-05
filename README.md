@@ -39,3 +39,13 @@ You will be prompted with a more involved command, which you can use to push tha
 After this, you can create a new Pull Request by clicking on the button that appears at the top of the README when you view the page. You can also navigate to the branch, and create a Pull Request from there.
 
 For more detailed instructions, see this video [GitHub Collaboration Tutorial](https://www.youtube.com/watch?v=jLWZaFzPS6Q).
+
+## Customizing Semantic UI
+
+Our Semantic UI customizations should be made in files under `semantic/src/themes/unhcr`.
+
+Each user interface element has its own variables that can be tweaked. For example, variables for buttons can be modified in `semantic/src/themes/unhcr/elements/button.variables`. Here's an [example pull request that customises horizontal padding of buttons](https://github.com/unhcr/dataviz-styleguide/pull/65/files#diff-9407611038769d05929dc94fd85bb090R19). Here's another [example pull request that customises the radio buttons appearance](https://github.com/unhcr/dataviz-styleguide/pull/54/files#diff-36a058ed3b22a726f7b396d03f3b5400R11).
+
+Each element also has an "overrides" file, in which you can add your own CSS rules related to that element. Here's an [example pull request that overrides the color of header and h1 elements](https://github.com/unhcr/dataviz-styleguide/pull/65/files#diff-9e65d7a27b59b21f3bdaf6a590bfaba6R9).
+
+Variables that apply to the entire theme, rather than a specific element, can be found in `semantic/src/themes/unhcr/globals/site.variables`. Here's an [example pull request that modifies the global border radius](https://github.com/unhcr/dataviz-styleguide/pull/53/files).
