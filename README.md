@@ -44,6 +44,17 @@ For more detailed instructions, see this video [GitHub Collaboration Tutorial](h
 
 Our Semantic UI customizations should be made in files under `semantic/src/themes/unhcr`.
 
+After making any changes, you'll need to run a build step to compile the Semantic UI source into CSS. Here's how to set up your system and run the build step:
+
+```
+cd dataviz-styleguide
+npm install
+cd semantic
+gulp build
+```
+
+Each time after you make a change, you'll need to run `gulp build`. Be sure to open the Chrome developer tools and make sure the cache is disabled (in the Network tab); otherwise you may be loading old versions of the CSS via cache, and not see the updates.
+
 Each user interface element has its own variables that can be tweaked. For example, variables for buttons can be modified in `semantic/src/themes/unhcr/elements/button.variables`. Here's an [example pull request that customises horizontal padding of buttons](https://github.com/unhcr/dataviz-styleguide/pull/65/files#diff-9407611038769d05929dc94fd85bb090R19). Here's another [example pull request that customises the radio buttons appearance](https://github.com/unhcr/dataviz-styleguide/pull/54/files#diff-36a058ed3b22a726f7b396d03f3b5400R11).
 
 Each element also has an "overrides" file, in which you can add your own CSS rules related to that element. Here's an [example pull request that overrides the color of header and h1 elements](https://github.com/unhcr/dataviz-styleguide/pull/65/files#diff-9e65d7a27b59b21f3bdaf6a590bfaba6R9).
