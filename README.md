@@ -3,7 +3,7 @@ UNHCR branding guidelines and best practices for data visualisation.
 
 Have a look at the style guide document here: https://unhcr.github.io/dataviz-styleguide/index.html
 
-# Development Worlflow
+# Development Workflow
 
 In this project, we use GitHub Issues to track tasks, and Pull Requests to organize and review changes.
 
