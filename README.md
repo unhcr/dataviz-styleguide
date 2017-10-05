@@ -7,6 +7,16 @@ Have a look at the style guide document here: https://unhcr.github.io/dataviz-st
 
 In this project, we use GitHub Issues to track tasks, and Pull Requests to organize and review changes.
 
+To see the site locally, you'll need a local HTTP server, which you can set up with the following steps:
+
+```
+npm install http-server -g
+cd dataviz-styleguide
+http-server
+```
+
+Navigate to http://localhost:8080 to view the site.
+
 ## Making a Pull Request
 
 These instructions assume you have access to push this repository.
