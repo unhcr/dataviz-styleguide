@@ -7,6 +7,16 @@ Have a look at the style guide document here: https://unhcr.github.io/dataviz-st
 
 In this project, we use GitHub Issues to track tasks, and Pull Requests to organize and review changes.
 
+To see the site locally, you'll need a local HTTP server, which you can set up with the following steps:
+
+```
+npm install http-server -g
+cd dataviz-styleguide
+http-server
+```
+
+Navigate to http://localhost:8080 to view the site. Be sure to open the Chrome developer tools and make sure the cache is disabled (in the Network tab). Otherwise you may be loading old versions of files via browser cache, and not see the latest updates.
+
 ## Making a Pull Request
 
 These instructions assume you have access to push this repository.
@@ -53,7 +63,7 @@ cd semantic
 gulp build
 ```
 
-Each time after you make a change, you'll need to run `gulp build`. Be sure to open the Chrome developer tools and make sure the cache is disabled (in the Network tab); otherwise you may be loading old versions of the CSS via cache, and not see the updates.
+Each time after you make a change, you'll need to run `gulp build`, then refresh the page (make sure cache is turned off so you see the latest).
 
 Each user interface element has its own variables that can be tweaked. For example, variables for buttons can be modified in `semantic/src/themes/unhcr/elements/button.variables`. Here's an [example pull request that customises horizontal padding of buttons](https://github.com/unhcr/dataviz-styleguide/pull/65/files#diff-9407611038769d05929dc94fd85bb090R19). Here's another [example pull request that customises the radio buttons appearance](https://github.com/unhcr/dataviz-styleguide/pull/54/files#diff-36a058ed3b22a726f7b396d03f3b5400R11).
 
