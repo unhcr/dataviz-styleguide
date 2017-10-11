@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Visual Test for iFrame Resizing</title>
+
+    <!-- Load CSS from UNPKG CDN for GitHub Pages deployment -->
+    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/styles.css">
+
+    <!-- Load CSS locally for use during development.
+      These requests will fail in deployment,
+      and will override the CSS from the CDN during development,
+      so we don't need to keep commenting and uncommenting these lines.
+    -->
+    <link href="../semantic/dist/semantic.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+    <style>
+      .gridtest {
+        background-color: pink;
+        height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="ui container grid">
+      <!--
+        This grid will flow to occupy varying height
+        depending on the available width.
+        This is a good test of the outer iframe resizing.
+      -->
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+      <div class="four wide column gridtest"><h1>Test</h1></div>
+    </div>
+  </body>
+</html>

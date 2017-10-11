@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Visual Test for iFrame Resizing</title>
+
+    <!-- Load CSS from UNPKG CDN for GitHub Pages deployment -->
+    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/semantic/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/dataviz-styleguide/styles.css">
+
+    <!-- Load CSS locally for use during development.
+      These requests will fail in deployment,
+      and will override the CSS from the CDN during development,
+      so we don't need to keep commenting and uncommenting these lines.
+    -->
+    <link href="../semantic/dist/semantic.min.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="ui container">
+      <iframe src="embeddedViz.html"></iframe>
+    </div>
+  </body>
+</html>
