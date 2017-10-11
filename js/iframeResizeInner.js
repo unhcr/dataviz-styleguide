@@ -11,17 +11,23 @@
   // This variable stores the last known height.
   var height = 0;
 
+  // Gets the current height of the stuff on the page.
+  function getHeight() {
+    return document.body.scrollHeight;
+  }
+
   // If we are inside an iframe...
   if (window.parent) {
 
     // Check twice a second for resizes.
     setInterval(function () {
+      var currentHeight = getHeight();
 
       // If the height changed,
-      if (height !== window.innerHeight) {
+      if (height !== currentHeight) {
 
         // store the new height for future comparisons,
-        height = window.innerHeight;
+        height = currentHeight;
 
         // pass a message with the height to the parent window.
         window.parent.postMessage(height, "*");
