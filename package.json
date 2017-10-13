@@ -1,6 +1,6 @@
 {
   "name": "dataviz-styleguide",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Branding guidelines for data visualisation.",
   "main": "index.js",
   "scripts": {
