@@ -42,5 +42,14 @@
       <div class="four wide column gridtest"><p>Test</p></div>
     </div>
     <script src="../js/iframeResizeInner.js"></script>
+    <script>
+
+      // Test that messages not sent by iframeResizeInner.js
+      // get filtered out and are ignored.
+      setTimeout(function (){
+        window.parent.postMessage('someOtherMessage', '*');
+      }, 1000);
+
+    </script>
   </body>
 </html>
