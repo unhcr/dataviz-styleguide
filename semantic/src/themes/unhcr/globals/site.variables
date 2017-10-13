@@ -25,10 +25,10 @@
 --------------------*/
 
 /* This is the single variable that controls them all */
-@emSize   : 14px;
+@emSize   : 16px;
 
 /* The size of page text  */
-@fontSize : 14px;
+@fontSize : 16px;
 
 
 /*-------------------
@@ -214,10 +214,18 @@
       Site Colors
 --------------------*/
 
+/*-- UNHCR Colours --*/
+@Blue100          : #CCE3F2;
+@Blue200          : #99C7E4;
+@Blue300          : #66AAD7;
+@Blue400          : #338EC9;
+@Blue500          : #0072BC;
+@Blue600          : #00568D;
+
 /*---  Colors  ---*/
 @red              : #DB2828;
 @orange           : #F2711C;
-@yellow           : #FBBD08;
+@yellow           : #FAEB00;
 @olive            : #B5CC18;
 @green            : #21BA45;
 @teal             : #00B5AD;
