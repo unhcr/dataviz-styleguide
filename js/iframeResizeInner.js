@@ -30,7 +30,10 @@
         height = currentHeight;
 
         // pass a message with the height to the parent window.
-        window.parent.postMessage(height, "*");
+        window.parent.postMessage({
+          type: 'iFrameResizeHeight', // Include for filtering.
+          height: height
+        }, "*");
       }
     }, 500);
   }
