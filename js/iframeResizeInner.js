@@ -13,7 +13,22 @@
 
   // Gets the current height of the stuff on the page.
   function getHeight() {
-    return document.body.scrollHeight;
+
+    // Inspired by https://github.com/davidjbradshaw/iframe-resizer/blob/master/src/iframeResizer.contentWindow.js#L777
+    var offsetHeight = document.body.offsetHeight;
+    var style = getComputedStyle(document.body);
+    var marginTop = parseInt(style.marginTop);
+    var marginBottom = parseInt(style.marginBottom);
+    var height = offsetHeight + marginTop + marginBottom;
+
+    console.log('height: ' + height);
+    console.log('document.height: ' + document.documentElement.scrollHeight);
+    console.log('scrollHeight: ' + document.body.scrollHeight);
+    console.log('offsetHeight: ' + document.body.offsetHeight);
+    console.log('clientHeight: ' + document.body.clientHeight);
+    console.log('boundingClientRect height: ' + document.body.getBoundingClientRect().height);
+
+    return height;
   }
 
   // If we are inside an iframe...
